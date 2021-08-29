@@ -9,7 +9,7 @@ export default defineConfig({
         lib: {
             entry: 'src/Frac.js',
             name: 'frac',
-            formats: ['es', 'umd']
+            formats: ['es', 'umd'],
         },
         rollupOptions: {
             // Externalize deps that shouldn't be bundled into the library.

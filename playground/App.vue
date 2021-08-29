@@ -26,22 +26,8 @@
         </main>
     </div>
 </template>
-<script>
+<script setup>
 import { ref } from 'vue'
-import Menu from '../package/src/components/Menu.vue'
-import MenuToggle from '../package/src/components/MenuToggle.vue'
 
-export default {
-    components: {
-        'frac-menu': Menu,
-        'frac-menu-toggle': MenuToggle,
-    },
-    setup() {
-        const app_element = ref(null)
-
-        return {
-            app_element,
-        }
-    },
-}
+const app_element = ref(null)
 </script>

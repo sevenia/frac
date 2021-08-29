@@ -3,6 +3,8 @@ import './tailwind.scss'
 // --- Components ------------------------------------------------------------------------------------
 import Input from './components/Input.vue'
 import ConfigRow from './components/ConfigRow.vue'
+import Menu from './components/Menu.vue'
+import MenuToggle from './components/MenuToggle.vue'
 import IconError from './icons/Error.vue'
 import IconPencil from './icons/Pencil.vue'
 import IconOk from './icons/Ok.vue'
@@ -11,6 +13,8 @@ import IconCancel from './icons/Cancel.vue'
 export const Components = {
     Input,
     ConfigRow,
+    Menu,
+    MenuToggle,
 
     IconError,
     IconPencil,

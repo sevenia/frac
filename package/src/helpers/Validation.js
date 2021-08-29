@@ -15,4 +15,4 @@ yup.setLocale({
     },
 })
 
-export default yup;
+export default yup

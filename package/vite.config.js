@@ -16,6 +16,7 @@ export default defineConfig({
             external: ['vue', 'vue-router'],
         },
         sourcemap: true,
+        minify: false,
     },
     plugins: [vue()],
 })

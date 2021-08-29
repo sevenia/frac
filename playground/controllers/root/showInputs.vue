@@ -25,7 +25,7 @@
 </template>
 <script setup>
 import { reactive } from 'vue'
-import * as yup from 'yup'
+import yup from '@/helpers/Validation'
 
 const models = reactive({
     it01: 'This is an example text',

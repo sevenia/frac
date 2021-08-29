@@ -51,12 +51,12 @@
                                 },
                             },
                             {
-                                name: 'showInputTexts',
+                                name: 'showInputs',
                                 component: () =>
                                     import('./controllers/root/showInputs.vue'),
                                 paths: {
-                                    it: '/it/input-texts',
-                                    en: '/en/input-texts',
+                                    it: '/it/inputs',
+                                    en: '/en/inputs',
                                 },
                             },
                             {
@@ -76,7 +76,7 @@
                 redirects: [
                     {
                         from: '/',
-                        to: 'root_showInputTexts',
+                        to: 'root_showInputs',
                     },
                 ],
                 not_found: {
@@ -87,7 +87,7 @@
                 },
                 menu: [
                     {
-                        route: 'root_showInputTexts',
+                        route: 'root_showInputs',
                         label: 'input_texts',
                     },
                     {

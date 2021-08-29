@@ -20,7 +20,7 @@
 </template>
 <script>
 import { reactive } from 'vue'
-import * as yup from 'yup'
+import yup from '@/helpers/Validation'
 
 export default {
     setup() {

@@ -1,8 +1,7 @@
 {
-    "name": "frac",
+    "name": "@sevenia/frac",
     "version": "0.0.1",
     "description": "FRontend.Application.Components",
-    "private": true,
     "author": "Sevenia <info@sevenia.tech> (https://sevenia.tech/)",
     "homepage": "TODO",
     "license": "MIT",
@@ -25,5 +24,15 @@
         "sass": "^1.38.2",
         "tailwindcss": "^2.2.8",
         "vite": "^2.5.1"
+    },
+    "files": [
+        "package/dist/*"
+    ],
+    "publishConfig": {
+        "access": "public"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sevenia/frac"
     }
 }

@@ -5,21 +5,17 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
     root: '/app/package',
     build: {
+        target: 'esnext',
         lib: {
             entry: 'src/Frac.js',
-            formats: ['es', 'cjs'],
             name: 'frac',
-            fileName: (format) => `frac.${format}.js`,
+            formats: ['es', 'umd', 'iife']
         },
         rollupOptions: {
             // Externalize deps that shouldn't be bundled into the library.
             external: ['vue', 'vue-router'],
         },
         sourcemap: true,
-        // Reduce bloat from legacy polyfills.
-        target: 'esnext',
-        // Leave minification up to applications.
-        minify: false,
     },
     plugins: [vue()],
 })

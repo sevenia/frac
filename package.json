@@ -28,6 +28,17 @@
     "files": [
         "package/dist/*"
     ],
+
+    "main": "package/dist/frac.umd.js",
+    "unpkg": "package/dist/frac.iife.js",
+    "jsdelivr": "package/dist/frac.iife.js",
+    "module": "./package/dist/frac.es.js",
+    "exports": {
+        ".": {
+            "import": "package/dist/frac.es.js",
+            "require": "package/dist/frac.umd.js"
+        }
+    },
     "publishConfig": {
         "access": "public"
     },

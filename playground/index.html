@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Frac Playground</title>
+    </head>
+    <body>
+        <div id="app"></div>
+
+        <script type="module">
+            import './assets/playground.scss'
+            import { Components, Plugins } from '../package/src/Frac.js'
+            import { createApp } from 'vue'
+            import App from './App.vue'
+
+            // if we choose to hydrate an existing html element we don't need a base component, use {}
+            const app = createApp(App)
+            app.component('frac-input', Components.Input)
+            app.component('frac-config-row', Components.ConfigRow)
+
+            Plugins.I18n.create({
+                locales: [
+                    {
+                        code: 'it',
+                        name: 'Italiano',
+                        file: () => import('./assets/translations/it.js'),
+                    },
+                    {
+                        code: 'en',
+                        name: 'English',
+                        file: () => import('./assets/translations/en.js'),
+                    },
+                ],
+            })
+            app.use(Plugins.I18n.plugin)
+
+            Plugins.Router.create({
+                base_path: '/',
+                controllers: [
+                    {
+                        name: 'root',
+                        actions: [
+                            {
+                                name: 'showRoot',
+                                paths: {
+                                    it: '/',
+                                    en: '/',
+                                },
+                            },
+                            {
+                                name: 'showInputTexts',
+                                component: () =>
+                                    import('./controllers/root/showInputs.vue'),
+                                paths: {
+                                    it: '/it/input-texts',
+                                    en: '/en/input-texts',
+                                },
+                            },
+                            {
+                                name: 'showConfigRows',
+                                component: () =>
+                                    import(
+                                        './controllers/root/showConfigRows.vue'
+                                    ),
+                                paths: {
+                                    it: '/it/config-rows',
+                                    en: '/en/config-rows',
+                                },
+                            },
+                        ],
+                    },
+                ],
+                redirects: [
+                    {
+                        from: '/',
+                        to: 'root_showInputTexts',
+                    },
+                ],
+                not_found: {
+                    path: '/:pathMatch(.*)*',
+                    name: 'NotFound',
+                    component: () =>
+                        import('./controllers/root/showNotFound.vue'),
+                },
+                menu: [
+                    {
+                        route: 'root_showInputTexts',
+                        label: 'input_texts',
+                    },
+                    {
+                        route: 'root_showConfigRows',
+                        label: 'config_rows',
+                    },
+                ],
+            })
+            app.use(Plugins.Router.plugin)
+            await Plugins.Router.plugin.isReady()
+
+            app.use(Plugins.EventHub.create())
+
+            app.use(Plugins.Helpers.create())
+
+            app.mount('#app')
+        </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+{
+    "name": "frac",
+    "version": "0.0.1",
+    "description": "FRontend.Application.Components",
+    "private": true,
+    "author": "Sevenia <info@sevenia.tech> (https://sevenia.tech/)",
+    "homepage": "TODO",
+    "license": "MIT",
+    "scripts": {
+        "build": "vite build --config package/vite.config.js",
+        "dev": "vite --config playground/vite.config.js"
+    },
+    "dependencies": {
+        "mitt": "^3.0.0",
+        "vee-validate": "^4.4.9",
+        "vue": "^3.2.6",
+        "vue-router": "4",
+        "yup": "^0.32.9"
+    },
+    "devDependencies": {
+        "@vitejs/plugin-vue": "^1.6.0",
+        "@vue/compiler-sfc": "^3.0.5",
+        "autoprefixer": "^10.3.3",
+        "postcss": "^8.3.6",
+        "sass": "^1.38.2",
+        "tailwindcss": "^2.2.8",
+        "vite": "^2.5.1"
+    }
+}

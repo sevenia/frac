@@ -78,15 +78,7 @@
     </div>
 </template>
 <script setup>
-import {
-    defineProps,
-    defineEmits,
-    ref,
-    onMounted,
-    onUnmounted,
-    provide,
-    inject,
-} from 'vue'
+import { ref, onMounted, onUnmounted, provide, inject } from 'vue'
 import FracIconOk from '../icons/Ok.vue'
 import FracIconCancel from '../icons/Cancel.vue'
 import FracButton from './Button.vue'

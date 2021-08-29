@@ -36,7 +36,6 @@
                     },
                 ],
             })
-            app.use(Plugins.I18n.plugin)
 
             Plugins.Router.create({
                 base_path: '/',
@@ -97,14 +96,21 @@
                     },
                 ],
             })
+
+            Plugins.EventHub.create()
+            Plugins.Helpers.create()
+
             app.use(Plugins.Router.plugin)
-            await Plugins.Router.plugin.isReady()
+            app.use(Plugins.I18n.plugin)
+            app.use(Plugins.EventHub.plugin)
+            app.use(Plugins.Helpers.plugin)
 
-            app.use(Plugins.EventHub.create())
-
-            app.use(Plugins.Helpers.create())
-
-            app.mount('#app')
+            async function main() {
+                await Plugins.Router.plugin.isReady()
+            }
+            main().then(() => {
+                app.mount('#app')
+            })
         </script>
     </body>
 </html>

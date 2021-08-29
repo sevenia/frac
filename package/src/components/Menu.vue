@@ -28,7 +28,7 @@
     </nav>
 </template>
 <script setup>
-import { defineProps, ref, inject, onMounted, onUnmounted } from 'vue'
+import { ref, inject, onMounted, onUnmounted } from 'vue'
 import Router from '../plugins/Router'
 
 const props = defineProps({ app: {} })

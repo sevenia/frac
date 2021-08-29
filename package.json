@@ -26,17 +26,14 @@
         "vite": "^2.5.1"
     },
     "files": [
-        "package/dist/*"
+        "package/dist"
     ],
-
-    "main": "package/dist/frac.umd.js",
-    "unpkg": "package/dist/frac.iife.js",
-    "jsdelivr": "package/dist/frac.iife.js",
+    "main": "./package/dist/frac.umd.js",
     "module": "./package/dist/frac.es.js",
     "exports": {
         ".": {
-            "import": "package/dist/frac.es.js",
-            "require": "package/dist/frac.umd.js"
+            "import": "./package/dist/frac.es.js",
+            "require": "./package/dist/frac.umd.js"
         }
     },
     "publishConfig": {

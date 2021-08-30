@@ -16,10 +16,15 @@
                     >
                         <slot name="link" v-bind="{ link, link_props }">
                             <a
-                                    :href="link_props.href"
-                                    @click="link_props.navigate"
-                                    class="f_w-full md:f_inline-block f_p-2 f_block hover:!f_bg-sevenia-200"
-                                    :class="getClasses('link', { isActive: link_props.isActive, isExactActive: link_props.isExactActive })"
+                                :href="link_props.href"
+                                @click="link_props.navigate"
+                                class="f_w-full md:f_inline-block f_p-2 f_block hover:!f_bg-sevenia-200"
+                                :class="
+                                    getClasses('link', {
+                                        isActive: link_props.isActive,
+                                        isExactActive: link_props.isExactActive,
+                                    })
+                                "
                             >
                                 {{ link.label }}
                             </a>

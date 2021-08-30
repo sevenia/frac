@@ -2633,29 +2633,38 @@
     return (vue.openBlock(), vue.createElementBlock("nav", {
       class: vue.normalizeClass(["f_h-0 md:f_block md:f_h-auto md:f_w-2/6 md:f_max-w-xs md:f_border-r", getClasses('nav')])
     }, [
-      vue.createElementVNode("ul", {
-        class: vue.normalizeClass(["f_min-h-screen f_w-6/7 f_pt-10 f_bg-white f_transform f_-translate-x-full md:f_translate-x-0 md:f_w-full", getClasses('inner')])
-      }, [
-        (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(vue.unref(links), (link) => {
-          return (vue.openBlock(), vue.createElementBlock("li", {
-            key: link.name
-          }, [
-            vue.createVNode(_component_router_link, {
-              to: { name: link.name },
-              custom: ""
-            }, {
-              default: vue.withCtx(({ navigate, href, isActive, isExactActive }) => [
-                vue.createElementVNode("a", {
-                  href: href,
-                  onClick: navigate,
-                  class: vue.normalizeClass(["f_w-full md:f_inline-block f_p-2 f_block hover:!f_bg-sevenia-200", getClasses('link', { isActive, isExactActive })])
-                }, vue.toDisplayString(link.label), 11, _hoisted_1$2)
-              ]),
-              _: 2
-            }, 1032, ["to"])
-          ]))
-        }), 128))
-      ], 2)
+      vue.renderSlot(_ctx.$slots, "links", { links: vue.unref(links) }, () => [
+        vue.createElementVNode("ul", {
+          class: vue.normalizeClass(["f_min-h-screen f_w-6/7 f_pt-10 f_bg-white f_transform f_-translate-x-full md:f_translate-x-0 md:f_w-full", getClasses('inner')])
+        }, [
+          (vue.openBlock(true), vue.createElementBlock(vue.Fragment, null, vue.renderList(vue.unref(links), (link) => {
+            return (vue.openBlock(), vue.createElementBlock("li", {
+              key: link.name
+            }, [
+              vue.createVNode(_component_router_link, {
+                to: { name: link.name },
+                custom: ""
+              }, {
+                default: vue.withCtx((link_props) => [
+                  vue.renderSlot(_ctx.$slots, "link", vue.normalizeProps(vue.guardReactiveProps({ link, link_props })), () => [
+                    vue.createElementVNode("a", {
+                      href: link_props.href,
+                      onClick: link_props.navigate,
+                      class: vue.normalizeClass(["f_w-full md:f_inline-block f_p-2 f_block hover:!f_bg-sevenia-200", 
+                                      getClasses('link', {
+                                          isActive: link_props.isActive,
+                                          isExactActive: link_props.isExactActive,
+                                      })
+                                  ])
+                    }, vue.toDisplayString(link.label), 11, _hoisted_1$2)
+                  ])
+                ]),
+                _: 2
+              }, 1032, ["to"])
+            ]))
+          }), 128))
+        ], 2)
+      ])
     ], 2))
   }
   }

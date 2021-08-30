@@ -3,28 +3,31 @@
         class="f_h-0 md:f_block md:f_h-auto md:f_w-2/6 md:f_max-w-xs md:f_border-r"
         :class="getClasses('nav')"
     >
-        <ul
-            class="f_min-h-screen f_w-6/7 f_pt-10 f_bg-white f_transform f_-translate-x-full md:f_translate-x-0 md:f_w-full"
-            :class="getClasses('inner')"
-        >
-            <li v-for="link in links" :key="link.name">
-                <router-link
-                    :to="{ name: link.name }"
-                    custom
-                    v-slot="{ navigate, href, isActive, isExactActive }"
-                >
-                    <!--                    TODO @click="", use a global nav guard? -->
-                    <a
-                        :href="href"
-                        @click="navigate"
-                        class="f_w-full md:f_inline-block f_p-2 f_block hover:!f_bg-sevenia-200"
-                        :class="getClasses('link', { isActive, isExactActive })"
+        <slot name="links" :links="links">
+            <ul
+                class="f_min-h-screen f_w-6/7 f_pt-10 f_bg-white f_transform f_-translate-x-full md:f_translate-x-0 md:f_w-full"
+                :class="getClasses('inner')"
+            >
+                <li v-for="link in links" :key="link.name">
+                    <router-link
+                        :to="{ name: link.name }"
+                        custom
+                        v-slot="link_props"
                     >
-                        {{ link.label }}
-                    </a>
-                </router-link>
-            </li>
-        </ul>
+                        <slot name="link" v-bind="{ link, link_props }">
+                            <a
+                                    :href="link_props.href"
+                                    @click="link_props.navigate"
+                                    class="f_w-full md:f_inline-block f_p-2 f_block hover:!f_bg-sevenia-200"
+                                    :class="getClasses('link', { isActive: link_props.isActive, isExactActive: link_props.isExactActive })"
+                            >
+                                {{ link.label }}
+                            </a>
+                        </slot>
+                    </router-link>
+                </li>
+            </ul>
+        </slot>
     </nav>
 </template>
 <script setup>

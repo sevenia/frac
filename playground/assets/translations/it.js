@@ -3,6 +3,7 @@ export default {
     menu__config_rows: 'Config Rows',
     error__field_required: 'Questo campo è richiesto',
     error__string_too_short: 'Sono richiesti almeno ###_min_### caratteri',
+    menu: 'Menu',
     edit: 'Modifica',
     confirm: 'Conferma',
     cancel: 'Annulla',

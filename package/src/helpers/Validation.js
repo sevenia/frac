@@ -1,5 +1,9 @@
 import * as yup from 'yup'
 
+yup.addMethod(yup.string, 'integer', function () {
+    return this.matches(/^\d*$/, 'error__string_must_be_numeric')
+})
+
 yup.setLocale({
     mixed: {
         default: () => ({ key: 'error__field_invalid' }),

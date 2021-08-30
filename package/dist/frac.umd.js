@@ -9358,6 +9358,10 @@
     ArraySchema: ArraySchema
   });
 
+  addMethod(create$5, 'integer', function () {
+      return this.matches(/^\d*$/, 'error__string_must_be_numeric')
+  });
+
   setLocale({
       mixed: {
           default: () => ({ key: 'error__field_invalid' }),

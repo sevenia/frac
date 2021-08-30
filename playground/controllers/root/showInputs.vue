@@ -22,6 +22,7 @@
             </h1>
         </template>
     </frac-input>
+    <frac-input v-model="models.it05" v-bind="config.it05"> </frac-input>
 </template>
 <script setup>
 import { reactive } from 'vue'
@@ -32,6 +33,7 @@ const models = reactive({
     it02: 'Input with custom label',
     it03: 'Delete text to see error',
     it04: 'Input with custom error',
+    it05: '',
 })
 
 const config = {
@@ -60,6 +62,14 @@ const config = {
         texts: {
             label:
                 'This input show errors differently. Validation: "Required" and "Min 3 chars"',
+        },
+    },
+    it05: {
+        name: 'it05',
+        validation: yup.string().max(6).required().integer(),
+        texts: {
+            label:
+                'This input expects an OTP code. Validation: "Required" and "Max 6 chars" and "Integer"',
         },
     },
 }

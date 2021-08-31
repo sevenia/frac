@@ -1,6 +1,15 @@
 <template>
-    <frac-input v-model="models.it01" v-bind="config.it01"> </frac-input>
-    <frac-input v-model="models.it02" v-bind="config.it02">
+    <frac-input
+        class="f_mb-3 f_py-2 md:f_py-4"
+        v-model="models.it01"
+        v-bind="config.it01"
+    >
+    </frac-input>
+    <frac-input
+        class="f_mb-3 f_py-2 md:f_py-4"
+        v-model="models.it02"
+        v-bind="config.it02"
+    >
         <template #label>
             <span class="f_flex">
                 <span>
@@ -14,15 +23,29 @@
             </span>
         </template>
     </frac-input>
-    <frac-input v-model="models.it03" v-bind="config.it03"> </frac-input>
-    <frac-input v-model="models.it04" v-bind="config.it04">
+    <frac-input
+        class="f_mb-3 f_py-2 md:f_py-4"
+        v-model="models.it03"
+        v-bind="config.it03"
+    >
+    </frac-input>
+    <frac-input
+        class="f_mb-3 f_py-2 md:f_py-4"
+        v-model="models.it04"
+        v-bind="config.it04"
+    >
         <template #error="error">
             <h1 class="f_bg-red-100 f_text-lg f_p-2">
                 The RAW error object is: {{ error }}
             </h1>
         </template>
     </frac-input>
-    <frac-input v-model="models.it05" v-bind="config.it05"> </frac-input>
+    <frac-input
+        class="f_mb-3 f_py-2 md:f_py-4"
+        v-model="models.it05"
+        v-bind="config.it05"
+    >
+    </frac-input>
 </template>
 <script setup>
 import { reactive } from 'vue'

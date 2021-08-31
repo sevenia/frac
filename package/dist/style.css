@@ -681,9 +681,6 @@ video {
 .f_ml-2 {
 	margin-left: 0.5rem;
 }
-.f_mb-3 {
-	margin-bottom: 0.75rem;
-}
 .f_mt-1 {
 	margin-top: 0.25rem;
 }
@@ -692,6 +689,9 @@ video {
 }
 .f_mt-2 {
 	margin-top: 0.5rem;
+}
+.f_mb-3 {
+	margin-bottom: 0.75rem;
 }
 .f_block {
 	display: block;

@@ -1,5 +1,5 @@
 <template>
-    <div class="f_mb-3 f_py-2 md:f_py-4">
+    <div>
         <label
             v-if="texts.label"
             :for="name"

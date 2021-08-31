@@ -30,7 +30,7 @@
 
     const _hoisted_1$7 = ["for"];
     const _hoisted_2$5 = { class: "f_relative f_flex f_flex-grow f_z-30" };
-    const _hoisted_3$5 = ["id", "name", "placeholder", "aria-describedby", "value"];
+    const _hoisted_3$5 = ["type", "id", "name", "placeholder", "aria-describedby", "value"];
     const _hoisted_4$2 = {
       key: 0,
       class: "f_absolute f_inset-y-0 f_right-0 f_pr-3 f_flex f_items-center f_pointer-events-none f_text-red-500 f_h-full f_w-8"
@@ -148,7 +148,7 @@
           vue.createElementVNode("div", _hoisted_2$5, [
             vue.createElementVNode("input", {
               ref: input,
-              type: "type",
+              type: __props.type,
               id: __props.name,
               name: __props.name,
               class: vue.normalizeClass(["f_block f_w-full f_py-2 f_px-3 f_rounded-sm f_border f_border-gray-300 f_outline-none hover:f_border-gray-400 active:f_border-gray-400 focus:f_border-gray-400", vue.unref(getClasses)('input')]),

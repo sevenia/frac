@@ -17,7 +17,7 @@
             <div class="f_relative f_flex f_flex-grow f_z-30">
                 <input
                     ref="input"
-                    type="type"
+                    :type="type"
                     :id="name"
                     :name="name"
                     class="f_block f_w-full f_py-2 f_px-3 f_rounded-sm f_border f_border-gray-300 f_outline-none hover:f_border-gray-400 active:f_border-gray-400 focus:f_border-gray-400"

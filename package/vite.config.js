@@ -14,7 +14,7 @@ export default defineConfig({
         },
         rollupOptions: {
             // Externalize deps that shouldn't be bundled into the library.
-            external: ['vue', 'vue-router'],
+            external: ['vue', 'vue-router', 'vee-validate'],
         },
         sourcemap: true,
         minify: false,
